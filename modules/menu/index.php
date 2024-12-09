@@ -21,8 +21,8 @@ $data = DB('menu')->all();
             <td><?= $info['item']; ?></td>
             <td><?= $info['category']; ?></td>
             <td><?= $info['status']; ?></td>
-            <td><?= $info['created_at']; ?></td>
-            <td><?= $info['updated_at']; ?></td>
+            <td><?= date('d-M-Y h:i:s A', strtotime($info['created_at'])); ?></td>
+            <td><?= date('d-M-Y h:i:s A', strtotime($info['updated_at'])); ?></td>
         </tr>
        <?php  }  ?>
     </tbody>
