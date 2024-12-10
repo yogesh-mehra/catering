@@ -1,10 +1,20 @@
 <?php
 $data = DB('menu')->all();
+if(isset($_POST['del'])){
+    $delid=implode(",",$_POST['del']);
+    DB('menu')->delete($delid);
+    redirect('menu');
+}
 ?>
-<table class="table table-stripted border">
+<div class="mt-4">
+    <a href="<?=ROOT;?>menu/form" class="btn btn-primary">Add Item</a>
+</div>
+<form method="post">
+<table class="table table-stripted border" id="list">
     <thead class="table-dark">
         <tr>
             <th>S.No</th>
+            <th> <input type="checkbox" id="all" onclick="checkdel(this)"> <label for="all">All</label> </th>
             <th>Item Name</th>
             <th>Categories</th>
             <th>Status</th>
@@ -18,12 +28,24 @@ $data = DB('menu')->all();
         foreach($data as $info){  ?>
         <tr>
             <td><?= ++$index; ?></td>
-            <td><?= $info['item']; ?></td>
+            <td><input type="checkbox" onclick="displaybtn()" name="del[]"
+             class="delc" value="<?=$info['id'];?>"> </td>
+            <td>
+                <a href="<?=ROOT;?>menu/form/<?=$info['id'];?>" 
+                title="Click for edit">
+                <?= $info['item']; ?>
+        </a>
+            </td>
             <td><?= $info['category']; ?></td>
             <td><?= $info['status']; ?></td>
             <td><?= date('d-M-Y h:i:s A', strtotime($info['created_at'])); ?></td>
             <td><?= date('d-M-Y h:i:s A', strtotime($info['updated_at'])); ?></td>
         </tr>
        <?php  }  ?>
-    </tbody>
-</table>
+        </tbody>
+        </table>
+        <div id="ditem" style="display: none;">
+            <button class="btn btn-danger">Delete Selected Item(s)</button>
+        
+        </div>
+        </form>

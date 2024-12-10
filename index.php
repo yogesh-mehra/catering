@@ -5,11 +5,13 @@ require_once "helper/redirect.php";
 require_once "helper/DB.php";
 $module = "booking";
 $file = "index";
+$uid=null;
 $url = $_GET['url'] ?? null;
 if ($url) {
     $url = explode('/',rtrim($url, '/'));
     $module = $url[0];
     $file = $url[1] ?? $file;
+    $uid = $url[2] ?? null;
 }
 $path = "modules/$module/$file.php";
 
