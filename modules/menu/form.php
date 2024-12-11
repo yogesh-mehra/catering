@@ -35,7 +35,7 @@ if(isset($_POST['item'])){
 </div>
 <div class="mb-3">
         <label >Select Category <small>(Hold ctrl button for multiple selection)</small></label>
-        <?php $cats=explode(',',$info['category']); ?>
+        <?php $cats = explode(',', $info['category']??''); ?>
         <select name="category[]" calss="from-select" multiple>
    <option value="Starter" <?=(in_array('Starter',$cats)) ? 'selected' : ''; ?>>Starter</option>
    <option value="Main Course" <?=(in_array("Main Course",$cats)) ? 'selected' : ''; ?>>Main Course</option>
@@ -49,7 +49,7 @@ if(isset($_POST['item'])){
         <label >Status</label>
         <select name="status" calss="from-select" >
              <option value="yes">Yes</option>
-             <option value="no" <?=($info['status']=='no')? 'selected':'';?>>No</option>
+             <option value="no" <?= ($info['status']??"" == 'no')? 'selected' : ''; ?>>No</option>
 </select>
 </div> 
 <div class="mb-3 text-center">
