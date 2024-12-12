@@ -9,6 +9,13 @@ if(isset($_POST['del'])){
 <div class="mt-4">
     <a href="<?=ROOT;?>menu/form" class="btn btn-primary">Add Item</a>
 </div>
+<?php if(isset($_SESSION['gt'])){
+    ?>
+    <div class="alert alert-success"><?=$_SESSION['gt'];?></div>
+    <?php
+    unset($_SESSION['gt']);
+}
+?>
 <form method="post">
 <table class="table table-stripted border" id="list">
     <thead class="table-dark">

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 define('ROOT','http://localhost/catering/');
 
 require_once "helper/redirect.php";

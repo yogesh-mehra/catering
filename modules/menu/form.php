@@ -13,7 +13,8 @@ if(isset($_POST['item'])){
         'status'=> $_POST['status']
        ];        
   if($obj->save($info, $uid)){
-        redirect("menu");
+        $_SESSION['gt']= "Data" . ($uid? "Update": "Saved"). "successfully";
+        redirect("menu"); 
   }else{
         echo "Something Went Wrong!";
   }
