@@ -1,5 +1,5 @@
 html,
-     body{
+body{
     height: 100%;
 }
 .main{
@@ -7,4 +7,23 @@ html,
     display: grid;
     grid-template-rows: 50px 1fr 30px;
 }
- 
+ .pagetitle{
+    padding:5px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: 336;
+    text-shadow: 1px 1px 3px £000;
+    border-bottom: 1px solid £ccf;
+    margin-bottom: 5px;
+ }
+ .pagetitle > spam {
+    color: £aa0;
+ }
+ .cont{
+    margin-top: 10px;
+    width:70%
+    margine: 
+    box-shadow: 1px 1px 5px;
+    border-radius: 7px;
+ }

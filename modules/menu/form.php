@@ -3,7 +3,7 @@
 $obj = DB('menu');
 if($uid){
        $info= $obj->find($uid);
-       print_r($info);
+       
 }
 if(isset($_POST['item'])){
        $info=[
@@ -13,7 +13,7 @@ if(isset($_POST['item'])){
         'status'=> $_POST['status']
        ];        
   if($obj->save($info, $uid)){
-        $_SESSION['gt']= "Data" . ($uid? "Update": "Saved"). "successfully";
+       Session::set('gt', "Data" . ($uid? "Updated": "Saved"). "successfully");
         redirect("menu"); 
   }else{
         echo "Something Went Wrong!";

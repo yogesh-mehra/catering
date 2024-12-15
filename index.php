@@ -1,15 +1,16 @@
 <?php 
-session_start();
+require_once "helper/Session.php";
+Session::init();
 define('ROOT','http://localhost/catering/');
 
 require_once "helper/redirect.php";
 require_once "helper/DB.php";
-$module = "booking";
+$module = "users";
 $file = "index";
 $uid=null;
 $url = $_GET['url'] ?? null;
 if ($url) {
-    $url = explode('/',rtrim($url, '/'));
+    $url = explode('/', rtrim($url, '/'));
     $module = $url[0];
     $file = $url[1] ?? $file;
     $uid = $url[2] ?? null;

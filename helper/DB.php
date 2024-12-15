@@ -12,11 +12,11 @@ function DB($table,$pk='id'){
             $sql = "insert into $this->table set ";
             $wh = "";
             if($id){
-                $sql = "update $this->table set";
-                $wh = " where $this->pk=$id";
+                $sql = "update $this->table set ";
+                $wh = "where $this->pk=$id";
             }
             foreach($data as $colname=>$value){
-                $sql.="$colname='".addslashes($value)."',";
+                $sql.="$colname='". addslashes($value)."',";
             }
                $sql=substr($sql,0,-1).$wh;
              
