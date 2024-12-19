@@ -5,13 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>catering</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
-    <link rel="stylesheet" herf="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" herf="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="stylesheet" herf="<?= ROOT; ?>public/css/custom.css">
-    
+<link href="https://cdn.jsdelivr.net/npm/datatables.net-dt/css/jquery.dataTables.min.css" rel="stylesheet">
+<style>.pagetitle{
+   padding:5px;
+   text-align:center;
+   font-size:2em;
+   font-weight:bold;
+   color:rgba(83, 83, 83, 0.993);
+   text-shadow: 5px 1px 3px #ddb8b8;
+ }
+ .pagetitle >span {
+   color:rgba(83, 83, 83, 0.993);
+ }
+ 
+ .cont{
+   width: 70%;
+   padding: 5px;
+   margin: 10px auto;
+   box-shadow: 1px 1px 5px #334;
+   border-radius: 7px;
+ }</style>
+<link rel="stylesheet" href="<?=ROOT;?>public/css/custom.css">
+
 </head>
 
 <body>
